@@ -1,0 +1,40 @@
+---
+import "../styles/global.css"
+import AsideMenu from "../components/asideMenu.astro"
+const { title = "Spotify Clon" } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="app" class="relative h-screen p-2 gap-2">
+      <aside
+        class="[grid-area:aside]: flex-col flex overflow-y-auto bg-blue-950"
+      >
+        <AsideMenu />
+      </aside>
+      <main class="[grid-area:main] bg-lime-950">MAIN</main>
+      <footer
+        class="[grid-area:player] rounded-lg bg-zinc-900 overflow-y-auto min-h-[100px]"
+      >
+      </footer>
+    </div>
+    <slot />
+  </body>
+</html>
+
+<style>
+  #app {
+    display: grid;
+    grid-template-areas:
+      "aside main main"
+      "player player player";
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr auto;
+  }
+</style>
