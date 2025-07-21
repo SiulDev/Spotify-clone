@@ -1,3 +1,0 @@
-# Astro Starter Kit: Basics
-
-``
