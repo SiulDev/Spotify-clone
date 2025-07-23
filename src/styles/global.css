@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-color: oklch(13% 0.028 261.692);
+  background-color: #121212;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;

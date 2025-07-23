@@ -1,3 +1,31 @@
 ---
-import "../styles/global.css"
+import SideMenuItems from "./sideMenuItems.astro"
+import LibraryIcon from "../icons/Library.astro"
+import HomeIcon from "../icons/Home.astro"
+import SearchIcon from "../icons/Search.astro"
 ---
+
+<nav class="flex flex-col flex-1 gap-2">
+  <!-- top-nav-home-search -->
+  <div class="bg-neutral-950 rounded-lg p-2">
+    <ul>
+      <SideMenuItems href="/">
+        <HomeIcon />
+        <p>Home</p>
+      </SideMenuItems>
+      <SideMenuItems href="/">
+        <SearchIcon />
+        <p>Search</p>
+      </SideMenuItems>
+    </ul>
+  </div>
+  <!-- bottom-nav-library -->
+  <div class="bg-neutral-950 rounded-lg p-1 flex-1">
+    <ul>
+      <SideMenuItems href="/">
+        <LibraryIcon />
+        <p>Library</p>
+      </SideMenuItems>
+    </ul>
+  </div>
+</nav>
