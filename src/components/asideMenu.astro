@@ -3,11 +3,13 @@ import SideMenuItems from "./sideMenuItems.astro"
 import LibraryIcon from "../icons/Library.astro"
 import HomeIcon from "../icons/Home.astro"
 import SearchIcon from "../icons/Search.astro"
+import SideMenuCard from "./sideMenuCard.astro"
+import { playlists } from "../lib/data"
 ---
 
 <nav class="flex flex-col flex-1 gap-2">
   <!-- top-nav-home-search -->
-  <div class="bg-neutral-950 rounded-lg p-2">
+  <div class="bg-neutral-900 rounded-lg p-2">
     <ul>
       <SideMenuItems href="/">
         <HomeIcon />
@@ -20,12 +22,14 @@ import SearchIcon from "../icons/Search.astro"
     </ul>
   </div>
   <!-- bottom-nav-library -->
-  <div class="bg-neutral-950 rounded-lg p-1 flex-1">
+  <div class="bg-neutral-900 rounded-lg flex-1 p-2">
     <ul>
       <SideMenuItems href="/">
         <LibraryIcon />
         <p>Library</p>
       </SideMenuItems>
+
+      {playlists.map(playlist => <SideMenuCard playlist={playlist} />)}
     </ul>
   </div>
 </nav>
